@@ -96,6 +96,6 @@ app.post('/', function(req, res) {
 
 
 //set up your port configurations. also start the server and add a message to display when running.
-app.listen(5000, function() {
+app.listen(5173, function() {
     console.log("Weather app listening on port 5000!");
 });
