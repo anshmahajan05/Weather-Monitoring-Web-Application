@@ -100,3 +100,5 @@ app.post("/", function (req, res) {
 app.listen(5000, function () {
   console.log("Weather app listening on port 5000!");
 });
+
+module.exports = app;
