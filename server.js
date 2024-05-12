@@ -24,7 +24,7 @@ app.set("view engine", "ejs");
 // Setup your default display on launch
 app.get("/", function(req, res) {
     // It will not fetch and display any data in the index page
-    res.render("index.ejs", { weather: null, error: null });
+    res.render("index", { weather: null, error: null });
 });
 
 // On a post request, the app shall data from OpenWeatherMap using the given arguments
@@ -81,7 +81,7 @@ app.post("/", function(req, res) {
                 }
                 weatherFahrenheit = roundToTwo(weatherFahrenheit);
                 // now render the data to your page (index.ejs) before displaying it out
-                res.render("index.ejs", {
+                res.render("index", {
                     weather: weather,
                     place: place,
                     temp: weatherTemp,
