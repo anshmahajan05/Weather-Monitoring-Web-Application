@@ -39,7 +39,7 @@ app.post("/", function (req, res) {
   request({ url: url }, function (err, response, body) {
     // check the json data fetched
     if (err) {
-      console.log(err);
+      console.log(err, "Internet gone");
       res.render("index", { weather: null, error: "Error, please try again" });
     } else {
       let weather = JSON.parse(body);
@@ -67,6 +67,7 @@ app.post("/", function (req, res) {
           clouds = `${weather.clouds.all}`,
           visibility = `${weather.visibility}`,
           main = `${weather.weather[0].main}`,
+          wind = `${weather.wind.speed}`,
           weatherFahrenheit;
         weatherFahrenheit = (weatherTemp * 9) / 5 + 32;
 
@@ -89,6 +90,7 @@ app.post("/", function (req, res) {
           clouds: clouds,
           visibility: visibility,
           main: main,
+          wind_speed: wind,
           error: null,
         });
       }
