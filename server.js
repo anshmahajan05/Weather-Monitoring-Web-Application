@@ -18,6 +18,7 @@ const apiKey = `${process.env.API_KEY}`;
 // serve your static pages from the public directory, it will act as your root directory
 app.use(express.static("public"));
 app.use(bodyParser.urlencoded({ extended: true }));
+app.set("views", path.join(__dirname, "views"));
 app.set("view engine", "ejs");
 
 // Setup your default display on launch
